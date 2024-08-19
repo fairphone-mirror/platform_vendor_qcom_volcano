@@ -520,6 +520,9 @@ else
 PRODUCT_ENABLE_QESDK := true
 endif
 
+# Enable QMS RFID feature
+QMS_ENABLE_RFID := true
+
 # Vendor property to enable advanced network scanning
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.enableadvancedscan=true
