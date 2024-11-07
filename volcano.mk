@@ -520,6 +520,9 @@ else
 PRODUCT_ENABLE_QESDK := true
 endif
 
+# Enable QMS RFID feature
+QMS_ENABLE_RFID := true
+
 # Vendor property to enable advanced network scanning
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.enableadvancedscan=true
@@ -559,6 +562,8 @@ ifneq ($(TARGET_USES_QMAA), true)
 ifeq ($(TARGET_USES_QMAA_OVERRIDE_ANDROID_CORE),true)
 #enable virtualization service
 $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
+PRODUCT_COPY_FILES += \
+   packages/modules/Virtualization/apex/permissions/features_com.android.virt.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/features_com.android.virt.xml
 endif
 endif
 
