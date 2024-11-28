@@ -1,3 +1,7 @@
+# device/qcom/iot/volcano/target.mk will only be present for iot target.
+# It will not affect non-IOT target where it would be absent.
+-include $(TOPDIR)device/qcom/iot/volcano/target.mk
+
 TARGET_BOARD_PLATFORM := volcano
 TARGET_BOOTLOADER_BOARD_NAME := volcano
 
