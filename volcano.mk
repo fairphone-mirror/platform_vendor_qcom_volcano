@@ -3,7 +3,9 @@
 -include $(TOPDIR)device/qcom/iot/volcano/target.mk
 
 TARGET_BOARD_PLATFORM := volcano
+ifndef TARGET_BOOTLOADER_BOARD_NAME
 TARGET_BOOTLOADER_BOARD_NAME := volcano
+endif
 
 BUILD_BROKEN_DUP_RULES := true
 
