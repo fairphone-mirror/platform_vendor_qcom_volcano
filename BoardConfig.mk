@@ -43,7 +43,8 @@ BOARD_KERNEL_SEPARATED_DTBO := false
 # Define the Dynamic Partition sizes and groups.
 ifeq ($(ENABLE_AB), true)
     ifeq ($(ENABLE_VIRTUAL_AB), true)
-        BOARD_SUPER_PARTITION_SIZE := 6442450944
+        # FPS-45, Raise super size to 9GB.
+        BOARD_SUPER_PARTITION_SIZE := 9663676416
     else
         BOARD_SUPER_PARTITION_SIZE := 12884901888
     endif
@@ -55,7 +56,8 @@ ifeq ($(BOARD_KERNEL_SEPARATED_DTBO),true)
     BOARD_INCLUDE_RECOVERY_DTBO := true
 endif
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
-BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 6438256640
+# FPS-45, Raise super size to 9GB.
+BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9659482112
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := vendor vendor_dlkm system_dlkm odm
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x06400000
 
