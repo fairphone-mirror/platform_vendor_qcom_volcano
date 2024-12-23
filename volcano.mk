@@ -172,7 +172,6 @@ VendorPrivAppPermissionTest\
 
 JAVA_IN_VENDOR_MAKE_WHITE_LIST :=\
 AEye\
-AON\
 SnapdragonCamera\
 
 SHIPPING_API_LEVEL := 34
