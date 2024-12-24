@@ -140,7 +140,12 @@ on init && property:ro.boot.mode=charger
 on charger
     start vendor.power_off_alarm
     write /sys/kernel/cnss/charger_mode 1
-
+#add for tof
+on post-fs
+    insmod /vendor_dlkm/lib/modules/stmvl53l1.ko
+    mkdir /mnt/vendor/persist/camera 0777 system system
+    chown system system /dev/stmvl53l1_ranging
+    chmod 0666 /dev/stmvl53l1_ranging
 #service vendor.lowi /vendor/bin/sscrpcd
 #   class core
 #   user system
