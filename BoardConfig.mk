@@ -260,6 +260,11 @@ include device/qcom/wlan/volcano/BoardConfigWlan.mk
 endif
 endif
 
+# SAMSUNG NFC
+ifeq ($(strip $(BOARD_USES_SAMSUNG_NFC)),true)
+    include vendor/samsung_slsi/nfc/bringup/BoardConfig-nfc.mk
+endif
+
 #################################################################################
 # This is the End of BoardConfig.mk file.
 # Now, Pickup other split Board.mk files:

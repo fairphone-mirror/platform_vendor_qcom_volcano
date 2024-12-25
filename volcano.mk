@@ -452,7 +452,11 @@ PRODUCT_PACKAGES += $(AUDIO_DLKM)
 KERNEL_MODULES_INSTALL := dlkm
 KERNEL_MODULES_OUT := out/target/product/$(PRODUCT_NAME)/$(KERNEL_MODULES_INSTALL)/lib/modules
 
-
+# SAMSUNG NFC
+BOARD_USES_SAMSUNG_NFC := true
+ifeq ($(strip $(BOARD_USES_SAMSUNG_NFC)),true)
+    include vendor/samsung_slsi/nfc/bringup/device-nfc.mk
+endif
 
 USE_LIB_PROCESS_GROUP := true
 
