@@ -574,7 +574,7 @@ endif
 
 #add camxoverridesettings.txt for camera module
 LOCAL_CAMX_OVERRIDE_SETTINGS_SRC := device/qcom/volcano/camera/camxoverridesettings.txt
-LOCAL_CAMX_OVERRIDE_SETTINGS_DEST := $(TARGET_OUT_VENDOR_ETC)/camera/camxoverridesettings.txt
+LOCAL_CAMX_OVERRIDE_SETTINGS_DEST := $(TARGET_COPY_OUT_VENDOR)/etc/camera/camxoverridesettings.txt
 PRODUCT_COPY_FILES +=$(LOCAL_CAMX_OVERRIDE_SETTINGS_SRC):$(LOCAL_CAMX_OVERRIDE_SETTINGS_DEST)
 
 ###################################################################################
