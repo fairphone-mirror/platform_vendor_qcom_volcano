@@ -585,3 +585,8 @@ $(foreach sdefs, $(sort $(wildcard vendor/qcom/defs/product-defs/system/*.mk)), 
 $(foreach vdefs, $(sort $(wildcard vendor/qcom/defs/product-defs/vendor/*.mk)), \
     $(call inherit-product, $(vdefs)))
 ###################################################################################
+
+#Begin added by juting.huang for cameraalgoservice porting
+FPCAMERAALGO_ROOT := vendor/fairphone/opensource/camera/cameraalgo
+-include vendor/fairphone/opensource/camera/cameraalgo/product.mk
+#End added by juting.huang for cameraalgoservice porting
