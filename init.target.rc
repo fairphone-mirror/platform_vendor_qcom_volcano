@@ -124,6 +124,12 @@ on boot
     # charging enable
     chmod 0666 /sys/class/power_supply/battery/user_fcc
 
+    #MMITest
+    chown system system /sys/class/power_supply/usb/typec_cc_orientation
+    chmod 0666 /sys/class/power_supply/usb/typec_cc_orientation
+    chown system system /sys/devices/platform/soc/a600000.ssusb/a600000.dwc3/udc/a600000.dwc3/current_speed
+    chmod 0666 /sys/devices/platform/soc/a600000.ssusb/a600000.dwc3/udc/a600000.dwc3/current_speed
+
 on property:vendor.display.lcd_density=560
    setprop dalvik.vm.heapgrowthlimit 256m
 
