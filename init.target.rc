@@ -100,6 +100,15 @@ on post-fs-data
     # Enable WLAN cold boot calibration
     write /sys/kernel/cnss/fs_ready 1
 
+# Set permission for OTP check file by chengming.xiang
+on post-fs-data
+    chmod 0666 /sys/class/deviceinfo/device_info/CamNameB
+    chmod 0666 /sys/class/deviceinfo/device_info/CamNameB2
+    chmod 0666 /sys/class/deviceinfo/device_info/CamNameF
+    chmod 0666 /sys/class/deviceinfo/device_info/CamOTPB
+    chmod 0666 /sys/class/deviceinfo/device_info/CamOTPB2
+    chmod 0666 /sys/class/deviceinfo/device_info/CamOTPF
+
 on early-boot
     verity_update_state
 
