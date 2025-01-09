@@ -1,2 +1,3 @@
 customTOFSensorLib=/vendor/lib64/hw/sensors.vl53l1.so
-enableTOFInterface=TRUESensorTypeTof=0
+enableTOFInterface=TRUE
+SensorTypeTof=0
