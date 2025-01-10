@@ -166,6 +166,11 @@ on post-fs
     mkdir /mnt/vendor/persist/camera 0777 system system
     chown system system /dev/stmvl53l1_ranging
     chmod 0666 /dev/stmvl53l1_ranging
+    chmod 0666 /sys/class/debug_ois/accgain
+    chmod 0666 /sys/class/debug_ois/afdrift
+    chmod 0666 /sys/class/debug_ois/oisops
+    chmod 0666 /sys/class/debug_ois/oisreg
+
 #service vendor.lowi /vendor/bin/sscrpcd
 #   class core
 #   user system
