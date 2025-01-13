@@ -134,10 +134,10 @@ on boot
     chmod 0666 /sys/class/power_supply/battery/user_fcc
 
     #MMITest
-    chown system system /sys/class/power_supply/usb/typec_cc_orientation
-    chmod 0666 /sys/class/power_supply/usb/typec_cc_orientation
-    chown system system /sys/devices/platform/soc/a600000.ssusb/a600000.dwc3/udc/a600000.dwc3/current_speed
-    chmod 0666 /sys/devices/platform/soc/a600000.ssusb/a600000.dwc3/udc/a600000.dwc3/current_speed
+    chown system system /sys/class/qcom-battery/typec_cc_orientation
+    chmod 0666 /sys/class/qcom-battery/typec_cc_orientation
+    chown system system /sys/class/udc/a600000.dwc3/current_speed
+    chmod 0666 /sys/class/udc/a600000.dwc3/current_speed
 
 #Begin added by juting.huang for cameraalgoservice
 on post-fs-data
