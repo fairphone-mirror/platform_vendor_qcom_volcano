@@ -108,8 +108,6 @@ on post-fs-data
     chmod 0666 /sys/class/deviceinfo/device_info/CamOTPB
     chmod 0666 /sys/class/deviceinfo/device_info/CamOTPB2
     chmod 0666 /sys/class/deviceinfo/device_info/CamOTPF
-    mkdir /mnt/vendor/persist/cam_cali 0777 system system
-    restorecon_recursive /mnt/vendor/persist/cam_cali
 
 on early-boot
     verity_update_state
