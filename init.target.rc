@@ -84,6 +84,10 @@ on fs
     restorecon_recursive /mnt/vendor/persist
     mkdir /mnt/vendor/persist/secnvm 0770 system system
     mkdir /mnt/vendor/persist/data 0700 system system
+    mkdir /mnt/vendor/persist/factory 0771 root system
+    mkdir /mnt/vendor/persist/factory/audio 0771 root system
+    chown root system /mnt/vendor/persist/factory/audio/aw_cali.bin
+    chmod 0664 /mnt/vendor/persist/factory/audio/aw_cali.bin
 
 on post-fs
     #Execute virtualization manager
