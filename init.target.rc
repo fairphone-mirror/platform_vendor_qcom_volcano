@@ -99,6 +99,9 @@ on late-fs
     #exec_start wait_for_keymaster
     mount_all /vendor/etc/fstab.qcom --late
 
+    mkdir /data/vendor/focaltech 0760 system system
+    restorecon /data/vendor/focaltech
+
 on post-fs-data
     mkdir /vendor/data/tombstones 0771 system system
     # Enable WLAN cold boot calibration
@@ -138,6 +141,9 @@ on boot
     chmod 0666 /sys/devices/platform/goodix_ts.0/gesture/double_en
     # charging enable
     chmod 0666 /sys/class/power_supply/battery/user_fcc
+
+    chown system system /dev/focaltech_fp
+    chmod 0660 /dev/focaltech_fp
 
     #MMITest
     chown system system /sys/class/qcom-battery/typec_cc_orientation
