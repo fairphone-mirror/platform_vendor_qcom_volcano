@@ -492,6 +492,8 @@ $(warning "BOARD_VNDK_VERSION = $(BOARD_VNDK_VERSION), RECOVERY_SNAPSHOT_VERSION
 
 TARGET_MOUNT_POINTS_SYMLINKS := false
 
+$(call inherit-product-if-exists, vendor/focaltech/fingerprint/focaltech.mk)
+
 # Fingerprint feature
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
