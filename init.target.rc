@@ -150,6 +150,7 @@ on boot
     chmod 0666 /sys/class/qcom-battery/typec_cc_orientation
     chown system system /sys/class/udc/a600000.dwc3/current_speed
     chmod 0666 /sys/class/udc/a600000.dwc3/current_speed
+    chmod 0666 /mnt/vendor/persist/sensors/registry/registry/volcano_spl07_0.json.spl07_0_platform.pressure.fac_cal.bias
 
 #Begin added by juting.huang for cameraalgoservice
 on post-fs-data
