@@ -152,6 +152,8 @@ on boot
     chown system system /sys/class/udc/a600000.dwc3/current_speed
     chmod 0666 /sys/class/udc/a600000.dwc3/current_speed
     chmod 0666 /mnt/vendor/persist/sensors/registry/registry/volcano_spl07_0.json.spl07_0_platform.pressure.fac_cal.bias
+    chown system /sys/class/leds/led:torch_0/brightness
+    chmod 0660 /sys/class/leds/led:torch_0/brightness
 
 #Begin added by juting.huang for cameraalgoservice
 on post-fs-data
@@ -235,7 +237,7 @@ on property:sys.boot_completed=1 && property:persist.sys.double_en=1
 on property:persist.sys.double_en=0
    write /sys/devices/platform/goodix_ts.0/gesture/double_en "0"
 
-on property:persist.sys.setflashlight=1
+on property:persist.odm.setflashlight=1
    write /sys/class/leds/led:torch_0/brightness 70
 
 
