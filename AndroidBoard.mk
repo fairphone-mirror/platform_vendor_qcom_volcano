@@ -35,6 +35,9 @@ define sec-image-generate
                 --signing-mode TEST \
                 > $(PRODUCT_OUT)/secimage.log 2>&1 )
         echo "Completed secimagev2 signed appsbl (ABL) (logs in $(PRODUCT_OUT)/secimage.log)"
+        @echo "Re-signed appsbl using sign.sh"
+		amss_sm7635/Milos.LA*/common/sectoolsv2/sign.sh signabl
+		cp $(PRODUCT_OUT)/abl_signed.elf $(PRODUCT_OUT)/abl.elf
 endef
 
 $(SIGN_ABL): $(TARGET_EMMC_BOOTLOADER)
