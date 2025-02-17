@@ -24,6 +24,14 @@ TARGET_EMMC_BOOTLOADER := $(TARGET_BOARD_UNSIGNED_ABL_DIR)/unsigned_abl.elf
 SIGN_ABL := $(PRODUCT_OUT)/abl.elf
 
 SECTOOLSV2_BIN := $(QCPATH)/sectools/Linux/sectools
+
+ifeq ($(BUILD_WITH_RELEASEKEY),true)
+define sec-image-generate
+        @echo "Re-signed appsbl using sign.sh"
+        amss_sm7635/Milos.LA*/common/sectoolsv2/sign.sh signabl
+        cp $(PRODUCT_OUT)/abl_signed.elf $(PRODUCT_OUT)/abl.elf
+endef
+else
 define sec-image-generate
         echo "Generating signed appsbl using secimagev2 tool"
         rm -rf $(PRODUCT_OUT)/abl.elf
@@ -35,10 +43,8 @@ define sec-image-generate
                 --signing-mode TEST \
                 > $(PRODUCT_OUT)/secimage.log 2>&1 )
         echo "Completed secimagev2 signed appsbl (ABL) (logs in $(PRODUCT_OUT)/secimage.log)"
-        @echo "Re-signed appsbl using sign.sh"
-		amss_sm7635/Milos.LA*/common/sectoolsv2/sign.sh signabl
-		cp $(PRODUCT_OUT)/abl_signed.elf $(PRODUCT_OUT)/abl.elf
 endef
+endif
 
 $(SIGN_ABL): $(TARGET_EMMC_BOOTLOADER)
 	$(call sec-image-generate)
