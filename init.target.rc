@@ -73,6 +73,26 @@ on init
     chmod 0660 /sys/devices/platform/soc/1d84000.ufshc/auto_hibern8
     start logd
 
+# add sensor sysfs node
+    chmod 0666 /sys/emkit/info/proximity
+    chown system system /sys/emkit/info/proximity
+
+    chmod 0666 /sys/emkit/info/acceleration
+    chown system system /sys/emkit/info/acceleration
+
+    chmod 0666 /sys/emkit/info/gyroscope
+    chown system system /sys/emkit/info/gyroscope
+
+    chmod 0666 /sys/emkit/info/magnetic
+    chown system system /sys/emkit/info/magnetic
+
+    chmod 0666 /sys/emkit/info/light
+    chown system system /sys/emkit/info/light
+
+    chmod 0666 /sys/emkit/info/pressure
+    chown system system /sys/emkit/info/pressure
+# add sensor sysfs node
+
 on early-fs
     start vold
 
