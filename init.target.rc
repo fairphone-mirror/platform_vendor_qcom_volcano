@@ -270,3 +270,11 @@ service fan_control_turn_off /vendor/bin/fan_service 0
     user root
     disabled
     oneshot
+
+#add by yangxuguang for set wlan mac FPS-70
+service set_wifi_mac /vendor/bin/sh /vendor/bin/setwlanmac.sh
+    class late_start
+    user root
+    group root
+    oneshot
+#add end
