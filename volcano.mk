@@ -1,3 +1,7 @@
+# device/qcom/iot/volcano/target.mk will only be present for iot target.
+# It will not affect non-IOT target where it would be absent.
+-include $(TOPDIR)device/qcom/iot/volcano/target.mk
+
 TARGET_BOARD_PLATFORM := volcano
 ifndef TARGET_BOOTLOADER_BOARD_NAME
 TARGET_BOOTLOADER_BOARD_NAME := volcano
@@ -572,8 +576,6 @@ ifneq ($(TARGET_USES_QMAA), true)
 ifeq ($(TARGET_USES_QMAA_OVERRIDE_ANDROID_CORE),true)
 #enable virtualization service
 $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
-PRODUCT_COPY_FILES += \
-   packages/modules/Virtualization/apex/permissions/features_com.android.virt.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/features_com.android.virt.xml
 endif
 endif
 
