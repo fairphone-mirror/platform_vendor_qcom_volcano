@@ -187,6 +187,8 @@ on boot
     chmod 0666 /mnt/vendor/persist/sensors/registry/registry/volcano_spl07_0.json.spl07_0_platform.pressure.fac_cal.bias
     chown system /sys/class/leds/led:torch_0/brightness
     chmod 0660 /sys/class/leds/led:torch_0/brightness
+    chown system system /sys/bus/spi/devices/spi0.0/fw_version
+    chmod 0660 /sys/bus/spi/devices/spi0.0/fw_version
 
 #Begin added by juting.huang for cameraalgoservice
 on post-fs-data
