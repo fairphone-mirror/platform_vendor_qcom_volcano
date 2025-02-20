@@ -73,6 +73,42 @@ on init
     chmod 0660 /sys/devices/platform/soc/1d84000.ufshc/auto_hibern8
     start logd
 
+# add sensor sysfs node
+    chmod 0666 /sys/emkit/info/proximity
+    chown system system /sys/emkit/info/proximity
+
+    chmod 0666 /sys/emkit/info/acceleration
+    chown system system /sys/emkit/info/acceleration
+
+    chmod 0666 /sys/emkit/info/gyroscope
+    chown system system /sys/emkit/info/gyroscope
+
+    chmod 0666 /sys/emkit/info/magnetic
+    chown system system /sys/emkit/info/magnetic
+
+    chmod 0666 /sys/emkit/info/light
+    chown system system /sys/emkit/info/light
+
+    chmod 0666 /sys/emkit/info/pressure
+    chown system system /sys/emkit/info/pressure
+    
+    chmod 0666 /sys/emkit/info/hall
+    chown system system /sys/emkit/info/hall
+# add sensor sysfs node
+
+on late-init
+    chown system system /sys/class/leds/aw_vibrator/trigger
+    chown system system /sys/class/leds/aw_vibrator/activate
+    chown system system /sys/class/leds/aw_vibrator/brightness
+    chown system system /sys/class/leds/aw_vibrator/duration
+    chown system system /sys/class/leds/aw_vibrator/state
+    chown system system /sys/class/leds/aw_vibrator/loop
+    chown system system /sys/class/leds/aw_vibrator/seq
+    chown system system /sys/class/leds/aw_vibrator/index
+    chown system system /sys/class/leds/aw_vibrator/enable
+    chown system system /sys/class/leds/aw_vibrator/rtp
+    chown system system /sys/class/leds/aw_vibrator/activate_mode
+
 on early-fs
     start vold
 
@@ -154,6 +190,8 @@ on boot
     chmod 0666 /mnt/vendor/persist/sensors/registry/registry/volcano_spl07_0.json.spl07_0_platform.pressure.fac_cal.bias
     chown system /sys/class/leds/led:torch_0/brightness
     chmod 0660 /sys/class/leds/led:torch_0/brightness
+    chown system system /sys/bus/spi/devices/spi0.0/fw_version
+    chmod 0660 /sys/bus/spi/devices/spi0.0/fw_version
 
 #Begin added by juting.huang for cameraalgoservice
 on post-fs-data
@@ -250,14 +288,6 @@ service vendor.cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
 on early-boot && property:persist.vendor.pcie.boot_option=*
     write /sys/bus/platform/devices/1c00000.qcom,pcie/debug/boot_option ${persist.vendor.pcie.boot_option}
     write /sys/bus/platform/devices/1c08000.qcom,pcie/debug/boot_option ${persist.vendor.pcie.boot_option}
-
-on property:debug.mmitest.vibrator=1
-    write /sys/class/leds/aw_vibrator/seq "0x00 0x01"
-    write /sys/class/leds/aw_vibrator/loop "0x00 0x00"
-    write /sys/class/leds/aw_vibrator/brightness "1"
-    write /sys/class/leds/aw_vibrator/duration "2000"
-    write /sys/class/leds/aw_vibrator/index "1"
-    write /sys/class/leds/aw_vibrator/activate "1"
 
 service fan_control_turn_on /vendor/bin/fan_service 1
     class late_start
