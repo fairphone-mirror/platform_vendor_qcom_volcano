@@ -91,6 +91,9 @@ on init
 
     chmod 0666 /sys/emkit/info/pressure
     chown system system /sys/emkit/info/pressure
+    
+    chmod 0666 /sys/emkit/info/hall
+    chown system system /sys/emkit/info/hall
 # add sensor sysfs node
 
 on late-init
