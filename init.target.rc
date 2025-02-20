@@ -192,6 +192,8 @@ on boot
     chmod 0660 /sys/class/leds/led:torch_0/brightness
     chown system system /sys/bus/spi/devices/spi0.0/fw_version
     chmod 0660 /sys/bus/spi/devices/spi0.0/fw_version
+    chown system system /sys/module/qcom_dload_mode/parameters/download_mode
+    chmod 0660 /sys/module/qcom_dload_mode/parameters/download_mode
 
 #Begin added by juting.huang for cameraalgoservice
 on post-fs-data
@@ -210,6 +212,12 @@ on init && property:ro.boot.mode=charger
     start vendor.pd_mapper
     wait /sys/kernel/boot_adsp/boot
     write /sys/kernel/boot_adsp/boot 1
+
+on property:debug.mmitest.tprawdata=1
+    chown system system /sys/bus/spi/drivers/eswin_eph861x/spi0.0/write_device_message
+    chmod 0666 /sys/bus/spi/drivers/eswin_eph861x/spi0.0/write_device_message
+    chown system system /sys/bus/spi/drivers/eswin_eph861x/spi0.0/read_device_message
+    chmod 0666 /sys/bus/spi/drivers/eswin_eph861x/spi0.0/read_device_message
 
 on charger
     start vendor.power_off_alarm
