@@ -145,6 +145,7 @@ on post-fs-data
     write /sys/kernel/cnss/fs_ready 1
 
 # Set permission for OTP check file by chengming.xiang
+#add for tof
 on post-fs-data
     chmod 0666 /sys/class/deviceinfo/device_info/CamNameB
     chmod 0666 /sys/class/deviceinfo/device_info/CamNameB2
@@ -154,6 +155,13 @@ on post-fs-data
     chmod 0666 /sys/class/deviceinfo/device_info/CamOTPF
     mkdir /mnt/vendor/persist/cam_cali 0777 system system
     restorecon_recursive /mnt/vendor/persist/cam_cali
+    mkdir /mnt/vendor/persist/camera 0777 system system
+    chown system system /dev/stmvl53l1_ranging
+    chmod 0666 /dev/stmvl53l1_ranging
+    chmod 0666 /sys/class/debug_ois/accgain
+    chmod 0666 /sys/class/debug_ois/afdrift
+    chmod 0666 /sys/class/debug_ois/oisops
+    chmod 0666 /sys/class/debug_ois/oisreg
 
 on early-boot
     verity_update_state
@@ -223,16 +231,6 @@ on property:debug.mmitest.tprawdata=1
 on charger
     start vendor.power_off_alarm
     write /sys/kernel/cnss/charger_mode 1
-#add for tof
-on post-fs
-    insmod /vendor_dlkm/lib/modules/stmvl53l1.ko
-    mkdir /mnt/vendor/persist/camera 0777 system system
-    chown system system /dev/stmvl53l1_ranging
-    chmod 0666 /dev/stmvl53l1_ranging
-    chmod 0666 /sys/class/debug_ois/accgain
-    chmod 0666 /sys/class/debug_ois/afdrift
-    chmod 0666 /sys/class/debug_ois/oisops
-    chmod 0666 /sys/class/debug_ois/oisreg
 
 #service vendor.lowi /vendor/bin/sscrpcd
 #   class core
