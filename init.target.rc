@@ -287,6 +287,12 @@ on property:persist.odm.double_en=0
 on property:persist.odm.setflashlight=1
    write /sys/class/leds/led:torch_0/brightness 70
 
+on property:persist.odm.screen_mode=0
+    write /sys/bus/spi/devices/spi0.0/edge_suppresion 0
+on property:persist.odm.screen_mode=1
+    write /sys/bus/spi/devices/spi0.0/edge_suppresion 3
+on property:persist.odm.screen_mode=2
+    write /sys/bus/spi/devices/spi0.0/edge_suppresion 1
 
 service vendor.cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
    class main
