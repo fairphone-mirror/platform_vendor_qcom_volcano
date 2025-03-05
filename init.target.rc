@@ -292,6 +292,17 @@ on property:persist.odm.screen_mode=1
 on property:persist.odm.screen_mode=2
     write /sys/bus/spi/devices/spi0.0/edge_suppresion 1
 
+on property:odm.face_unlock=1
+    write /sys/devices/system/cpu/cpu0/online 0
+    write /sys/devices/system/cpu/cpu1/online 0
+    write /sys/devices/system/cpu/cpu2/online 0
+    write /sys/devices/system/cpu/cpu3/online 0
+on property:odm.face_unlock=0
+    write /sys/devices/system/cpu/cpu0/online 1
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu2/online 1
+    write /sys/devices/system/cpu/cpu3/online 1
+
 service vendor.cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
    class main
    user system
