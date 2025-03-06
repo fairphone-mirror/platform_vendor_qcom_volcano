@@ -303,6 +303,11 @@ on property:odm.face_unlock=0
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
 
+on property:persist.odm.touch_sensitivity=0
+    write sys/bus/spi/devices/spi0.0/glove_mode 0
+on property:persist.odm.touch_sensitivity=1
+    write sys/bus/spi/devices/spi0.0/glove_mode 1
+
 service vendor.cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
    class main
    user system
