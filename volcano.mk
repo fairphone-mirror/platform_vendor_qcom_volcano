@@ -512,6 +512,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml
 
+PRODUCT_COPY_FILES += \
+    device/qcom/volcano/privapp-permissions-google-lens.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/privapp-permissions-google-lens.xml
+
 #Charger
 ifeq ($(ENABLE_AB),true)
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/charger_fw_fstab.qti:$(TARGET_COPY_OUT_VENDOR)/etc/charger_fw_fstab.qti
