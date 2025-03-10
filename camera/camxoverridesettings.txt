@@ -3,5 +3,5 @@ enableTOFInterface=TRUE
 SensorTypeTof=0
 enableOISOptimization=FALSE
 tintlessEnable=TRUE
-#enableTuningMetadata=TRUE
-#enable3ADebugData=TRUE
+enableTuningMetadata=TRUE
+enable3ADebugData=TRUE
