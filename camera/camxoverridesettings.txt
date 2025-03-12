@@ -5,3 +5,4 @@ enableOISOptimization=FALSE
 tintlessEnable=TRUE
 enableTuningMetadata=TRUE
 enable3ADebugData=TRUE
+enableSwHME=FALSE
