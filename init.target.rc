@@ -186,7 +186,6 @@ on boot
     # double tap
     chmod 0666 /sys/devices/platform/goodix_ts.0/gesture/double_en
     # charging enable
-    chmod 0666 /sys/class/power_supply/battery/user_fcc
 
     chown system system /dev/focaltech_fp
     chmod 0660 /dev/focaltech_fp
@@ -307,6 +306,11 @@ on property:persist.odm.touch_sensitivity=0
     write sys/bus/spi/devices/spi0.0/glove_mode 0
 on property:persist.odm.touch_sensitivity=1
     write sys/bus/spi/devices/spi0.0/glove_mode 1
+
+on property:persist.odm.charge_mode=0
+    write /sys/class/qcom-battery/chgmod_fcc 6000000
+on property:persist.odm.charge_mode=1
+    write /sys/class/qcom-battery/chgmod_fcc 1000000
 
 service vendor.cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
    class main
