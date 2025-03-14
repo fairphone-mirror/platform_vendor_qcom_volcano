@@ -89,11 +89,11 @@ SPDX-License-Identifier: BSD-3-Clause-Clear
         <version>1</version>
         <fqname>INxpNfc/default</fqname>
     </hal>
-    <hal format="aidl">
+    <!-- <hal format="aidl">
         <name>android.hardware.secure_element</name>
         <version>1</version>
         <fqname>ISecureElement/eSE1</fqname>
-    </hal>
+    </hal> -->
     <!-- dpm QMI hal service -->
     <hal format="hidl">
         <name>com.qualcomm.qti.dpm.api</name>
