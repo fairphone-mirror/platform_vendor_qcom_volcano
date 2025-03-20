@@ -7,3 +7,6 @@ NumPCRsBeforeStreamOn=1
 #enableTuningMetadata=TRUE
 #enable3ADebugData=TRUE
 #enableSwHME=FALSE
+EISv3DisableOIS=FALSE
+EISv2DisableOIS=FALSE
+EisOisMode=1
