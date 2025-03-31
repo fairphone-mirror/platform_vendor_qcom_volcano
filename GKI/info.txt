@@ -1,0 +1,5 @@
+android14-6.1-2024-11_r9
+
+# gki-info.txt
+certify_bootimg_extra_args=--prop ARCH:arm64 --prop BRANCH: --prop KERNEL_RELEASE:6.1.112-android14-11-gde436e940319-ab13241938
+kernel_release=6.1.112-android14-11-gde436e940319-ab13241938
