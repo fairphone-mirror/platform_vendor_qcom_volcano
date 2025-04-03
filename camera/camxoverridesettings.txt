@@ -10,3 +10,4 @@ EISv3DisableOIS=FALSE
 EISv2DisableOIS=FALSE
 EisOisMode=1
 enableVIULLProcessing=FALSE
+enableHealthMonitor=FALSE
