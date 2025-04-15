@@ -544,7 +544,7 @@ PRODUCT_PROPERTY_OVERRIDES += persist.sys.fuse.passthrough.enable=true
 
 #tp firmware
 PRODUCT_COPY_FILES += \
-    device/qcom/volcano/fps/tpfirmware/EPH86XX_fw_v2448.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/EPH86XX_fw.bin\
+    device/qcom/volcano/fps/tpfirmware/EPH86XX_fw_v2450.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/EPH86XX_fw.bin\
 # ODM ueventd.rc
 # - only for use with VM support right now
 ifeq ($(TARGET_ENABLE_VM_SUPPORT),true)
