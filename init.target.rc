@@ -306,6 +306,11 @@ on property:persist.odm.charge_disable=0
 on property:persist.odm.charge_disable=1
     write /sys/class/qcom-battery/charge_disable 1
 
+on property:odm.charge_speed_limit=0
+    write /sys/class/qcom-battery/display_fcc 4000000
+on property:odm.charge_speed_limit=1
+    write /sys/class/qcom-battery/display_fcc 6000000
+
 service vendor.cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
    class main
    user system
