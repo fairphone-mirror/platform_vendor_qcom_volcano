@@ -462,6 +462,10 @@ ifeq ($(strip $(BOARD_USES_SAMSUNG_NFC)),true)
     include vendor/samsung_slsi/nfc/bringup/device-nfc.mk
 endif
 
+PRODUCT_VENDOR_PROPERTIES += persist.log.tag=V
+PRODUCT_VENDOR_PROPERTIES += persist.nfc.vendor_debug_enabled=true
+PRODUCT_VENDOR_PROPERTIES += persist.nfc.debug_enabled=true
+
 USE_LIB_PROCESS_GROUP := true
 
 # MIDI feature
