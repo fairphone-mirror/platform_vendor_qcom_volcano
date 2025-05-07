@@ -18,3 +18,4 @@ enableVIULLProcessing=FALSE
 enableHealthMonitor=FALSE
 enableSignal35Tombstone=FALSE
 disablePreProcessedOutputPorts==FALSE
+enableDynamicModeSwitchVCUpdate=TRUE
