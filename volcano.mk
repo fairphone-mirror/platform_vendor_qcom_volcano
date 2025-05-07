@@ -357,9 +357,6 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.incremental.enable=yes
 
-PRODUCT_HOST_PACKAGES += \
-    configstore_xmlparser
-
 ifneq (,$(wildcard $(QCPATH)/vsdk-tools))
 PRODUCT_HOST_PACKAGES += \
     install_vsdk_py2
