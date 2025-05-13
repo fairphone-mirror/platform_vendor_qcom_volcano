@@ -343,3 +343,11 @@ service set_wifi_mac /vendor/bin/sh /vendor/bin/setwlanmac.sh
     group root
     oneshot
 #add end
+
+on property:persist.sys.oem.debug.enable_ramdump=true
+   setprop persist.vendor.ssr.restart_level  ALL_DISABLE
+   write /sys/module/qcom_dload_mode/parameters/download_mode 1
+
+on property:persist.sys.oem.debug.enable_ramdump=false
+   setprop persist.vendor.ssr.restart_level  ALL_ENABLE
+   write /sys/module/qcom_dload_mode/parameters/download_mode 0
