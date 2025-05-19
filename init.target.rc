@@ -309,6 +309,9 @@ on property:persist.odm.charge_disable=0
 on property:persist.odm.charge_disable=1
     write /sys/class/qcom-battery/charge_disable 1
 
+on property:odm.charge_speed_limit=0 && property:vendor.tinfo.thermal.socd_path=*
+    write ${vendor.tinfo.thermal.socd_path}/trip_point_2_temp 90
+
 on property:odm.charge_speed_limit=0
     write /sys/class/qcom-battery/display_fcc 4000000
 on property:odm.charge_speed_limit=1
