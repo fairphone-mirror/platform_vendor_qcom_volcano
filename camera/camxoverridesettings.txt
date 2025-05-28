@@ -17,7 +17,7 @@ EisOisMode=1
 enableVIULLProcessing=FALSE
 enableHealthMonitor=FALSE
 enableSignal35Tombstone=FALSE
-#disablePreProcessedOutputPorts==FALSE
+disablePreProcessedOutputPorts==FALSE
 enableDynamicModeSwitchVCUpdate=TRUE
 logWarningMask=0
 chiLogWarningMask=0
