@@ -220,7 +220,8 @@ PRODUCT_PACKAGES += android.hardware.fastboot-service.example_recovery
 
 ifeq ($(ENABLE_AB),true)
 ifeq ($(SYSTEMEXT_SEPARATE_PARTITION_ENABLE), true)
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/default/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/emmc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.emmc
 else
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/fstab_noSysext.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
 endif
