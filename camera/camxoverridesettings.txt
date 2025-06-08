@@ -19,6 +19,7 @@ enableHealthMonitor=FALSE
 enableSignal35Tombstone=FALSE
 disablePreProcessedOutputPorts==FALSE
 enableDynamicModeSwitchVCUpdate=TRUE
+sessionResponseTimePadding=100
 logWarningMask=0
 chiLogWarningMask=0
 logRequestMapping=FALSE
