@@ -23,9 +23,3 @@ sessionResponseTimePadding=100
 logWarningMask=0
 chiLogWarningMask=0
 logRequestMapping=FALSE
-
-# chengming.xiang add to improve uw 4k no eis recording performance
-# numberOfCHIThreads 6 --> 8  maxHalRequests 6 -> 8
-
-numberOfCHIThreads=8
-maxHalRequests=8
