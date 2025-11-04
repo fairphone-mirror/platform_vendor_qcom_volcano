@@ -213,6 +213,14 @@ on post-fs-data
     mkdir /data/vendor/camera_dump 0777 system system
 #End added by juting.huang for cameraalgoservice
 
+#start algoservice cache and model
+on post-fs-data
+    mkdir /data/vendor/algoservice 0777 system system
+    chmod 0777 /data/vendor/algoservice
+    chown system system /data/vendor/algoservice
+    restorecon_recursive /data/vendor/algoservice
+#end
+
 on property:vendor.display.lcd_density=560
    setprop dalvik.vm.heapgrowthlimit 256m
 
