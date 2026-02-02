@@ -1,5 +1,5 @@
-android14-6.1-2025-01_r28
+android14-6.1-2025-04_r8
 
 # gki-info.txt
 certify_bootimg_extra_args=--prop ARCH:arm64 --prop BRANCH: --prop KERNEL_RELEASE:6.1.118-android14-11-g5a3e04d9b6d0-ab14281642
-kernel_release=6.1.118-android14-11-g5a3e04d9b6d0-ab14281642
+kernel_release=6.1.129-android14-11-gbb141a09b4e0-ab13735664
