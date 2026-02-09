@@ -15,12 +15,12 @@ TARGET_CPU_VARIANT := kryo300
 TARGET_NO_BOOTLOADER := false
 TARGET_USES_UEFI := true
 TARGET_USES_REMOTEPROC := true
-ifeq ($(TARGET_BUILD_VARIANT),user)
+#ifeq ($(TARGET_BUILD_VARIANT),user)
     TARGET_NO_KERNEL := true
     BOARD_USES_GENERIC_KERNEL_IMAGE := true
-else
-    TARGET_NO_KERNEL := false
-endif
+#else
+#    TARGET_NO_KERNEL := false
+#endif
 
 TARGET_SIGNONLY_BOOTLOADER := true
 
